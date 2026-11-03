@@ -1,0 +1,74 @@
+[
+  {
+    "id": "original-pdf",
+    "lang": "EN",
+    "event": "Observatory visit",
+    "planningDay": "2026-11-23",
+    "text": "— Page 1 —\nFICTIONAL SCHOOL NOTICE\nObservatory visit: 23 November 2026.\nMeet at 08:30. Bring water and a packed lunch.\n\n— Page 2 —\nFICTIONAL NOTICE - page 2\nObservatory visit: 23 November 2026.\nBring a warm jacket.",
+    "expected": {
+      "meeting": [
+        "08:30"
+      ],
+      "must": [
+        "water",
+        "lunch",
+        "jacket"
+      ],
+      "day": "2026-11-23"
+    }
+  },
+  {
+    "id": "revision-photo",
+    "lang": "PL",
+    "event": "Observatory visit",
+    "planningDay": "2026-11-23",
+    "text": "— Page 1 —\nFIKCYJNE PISMO - pelna aktualizacja\n\nWycieczka do obserwatorium: 23 listopada 2026.\n\nZbiorka o 08:50 zamiast 08:30.\n\nZabierz wode i ciepla kurtke.\n\nNie przynos obiadu. Posilek jest zapewniony.\nDD",
+    "expected": {
+      "meeting": [
+        "08:50"
+      ],
+      "must": [
+        "water",
+        "jacket"
+      ],
+      "forbidden": [
+        "lunch"
+      ],
+      "day": "2026-11-23"
+    }
+  },
+  {
+    "id": "cancellation-scan",
+    "lang": "EN",
+    "event": "Observatory visit",
+    "planningDay": "2026-11-23",
+    "text": "— Page 1 —\nFICTIONAL CANCELLATION NOTICE\nObservatory visit: 23 November 2026.\n\nThe entire visit is cancelled. No new date is set.\nPrevious meeting at 08:50 and all preparation\nrequirements for this visit no longer apply.",
+    "expected": {
+      "meeting": [],
+      "must": [],
+      "count": 0,
+      "warning": "cancel",
+      "day": "2026-11-23"
+    }
+  },
+  {
+    "id": "mixed-pdf",
+    "lang": "EN",
+    "event": "Observatory visit",
+    "planningDay": "2026-11-23",
+    "text": "— Page 1 —\nSchool notice - see the scanned correction below.\nFICTIONAL CORRECTION\n\nObservatory visit: 23 November 2026.\n\nMeet at 09:05, replacing the old 08:30 time.\n\nBring water and a warm jacket.\n\nDo not bring lunch; food is provided.",
+    "expected": {
+      "meeting": [
+        "09:05"
+      ],
+      "must": [
+        "water",
+        "jacket"
+      ],
+      "forbidden": [
+        "lunch"
+      ],
+      "day": "2026-11-23"
+    }
+  }
+]

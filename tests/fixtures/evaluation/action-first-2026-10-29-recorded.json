@@ -1,0 +1,82 @@
+{
+  "cancel": {
+    "status": "ok",
+    "candidates": [],
+    "warnings": [
+      "Поїздку до музею 16 грудня 2026 року повністю скасовано — усі попередні вимоги (збір о 08:20, вода, дощовик, форма згоди) більше не діють. Нової дати немає."
+    ],
+    "metrics": {
+      "elapsedMs": 19332,
+      "headersMs": 19329,
+      "responseBytes": 10119,
+      "phase": "validation",
+      "promptTokens": 801,
+      "completionTokens": 1875,
+      "totalTokens": 2676
+    },
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "requestId": "07d3751f-1d57-4218-9c68-88e16022861d",
+    "extractedAt": "2026-10-29T20:02:51.715Z",
+    "sourceId": "cancel-dfbf229f-f142-4663-8445-818f039fab0f",
+    "sourceText": "Навчальний приклад. Оновлення: поїздку до музею 16 грудня 2026 року повністю скасовано. Старе повідомлення «Збір біля школи о 08:20. Візьміть воду і дощовик» більше не діє. Форму згоди повертати не потрібно. Нової дати немає.",
+    "event": "Actions and deadlines in this school message",
+    "day": "2026-10-29"
+  },
+  "deadlines": {
+    "status": "ok",
+    "candidates": [
+      {
+        "kind": "meeting",
+        "value": "08:20",
+        "quote": "Збір біля школи о 08:20.",
+        "day": "2026-12-16",
+        "dateQuote": "16 грудня 2026 року"
+      },
+      {
+        "kind": "task",
+        "value": "Повернути підписану форму до 17:00",
+        "quote": "Поверніть підписану форму до 12 грудня 2026 року, 17:00.",
+        "day": "2026-12-12",
+        "dateQuote": "12 грудня 2026 року, 17:00."
+      },
+      {
+        "kind": "item",
+        "value": "Взяти воду",
+        "quote": "На поїздку візьміть воду і дощовик.",
+        "day": "2026-12-16",
+        "dateQuote": "16 грудня 2026 року"
+      },
+      {
+        "kind": "item",
+        "value": "Взяти дощовик",
+        "quote": "На поїздку візьміть воду і дощовик.",
+        "day": "2026-12-16",
+        "dateQuote": "16 грудня 2026 року"
+      },
+      {
+        "kind": "task",
+        "value": "Перевірити заряд ліхтарика",
+        "quote": "Перевірте заряд ліхтарика.",
+        "day": null,
+        "dateQuote": null
+      }
+    ],
+    "warnings": [],
+    "metrics": {
+      "elapsedMs": 27095,
+      "headersMs": 27092,
+      "responseBytes": 11931,
+      "phase": "validation",
+      "promptTokens": 822,
+      "completionTokens": 2580,
+      "totalTokens": 3402
+    },
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "requestId": "de06f9ea-55ad-4002-bb73-b84bd1086fd0",
+    "extractedAt": "2026-10-29T20:02:32.379Z",
+    "sourceId": "deadlines-c85ad17a-58ac-40a3-8e8d-59bef9a4a9dc",
+    "sourceText": "Навчальний приклад. Поїздка до музею — 16 грудня 2026 року. Збір біля школи о 08:20. Поверніть підписану форму до 12 грудня 2026 року, 17:00. На поїздку візьміть воду і дощовик. Перевірте заряд ліхтарика. Строк для перевірки ліхтарика не зазначено.",
+    "event": "Actions and deadlines in this school message",
+    "day": "2026-10-29"
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "en-full-cancellation": {
+    "status": "ok",
+    "candidates": [],
+    "warnings": [
+      "Aquarium visit on 10 November 2026 is cancelled entirely - no preparation is required. The notice explicitly replaces the earlier instruction \"Meet at 08:35 and bring a packed lunch\" which no longer applies, with no replacement event."
+    ],
+    "metrics": {
+      "elapsedMs": 6426,
+      "headersMs": 6426,
+      "responseBytes": 3103,
+      "phase": "validation",
+      "promptTokens": 758,
+      "completionTokens": 497,
+      "totalTokens": 1255
+    },
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "requestId": "bbbc0165-ff08-43d6-a714-6cdee260b70d",
+    "extractedAt": "2026-10-28T12:06:34.998Z",
+    "sourceId": "en-full-cancellation-fcb87870-e345-43f0-a040-39dea0261f9f",
+    "sourceText": "FICTIONAL SCHOOL NOTICE. The Aquarium visit on 10 November 2026 is cancelled entirely. This notice replaces the earlier notice for that visit. The old instruction \"Meet at 08:35 and bring a packed lunch\" no longer applies. There is no replacement event and no preparation is required for this visit.",
+    "event": "Aquarium visit",
+    "day": "2026-11-10"
+  },
+  "pl-unresolved-times": {
+    "status": "ok",
+    "candidates": [
+      {
+        "kind": "meeting",
+        "value": "08:05",
+        "quote": "zbiórka o 08:05",
+        "day": "2026-11-09",
+        "dateQuote": "9 listopada 2026"
+      },
+      {
+        "kind": "meeting",
+        "value": "08:25",
+        "quote": "zbiórka o 08:25",
+        "day": "2026-11-09",
+        "dateQuote": "9 listopada 2026"
+      },
+      {
+        "kind": "item",
+        "value": "water",
+        "quote": "Zabierz wodę.",
+        "day": "2026-11-09",
+        "dateQuote": "9 listopada 2026"
+      }
+    ],
+    "warnings": [
+      "Ambiguous meeting time: two conflicting times (08:05 and 08:25) are both listed as active with explicit statement that neither replaces the other and it is unknown which is correct - requires clarification before use."
+    ],
+    "metrics": {
+      "elapsedMs": 29011,
+      "headersMs": 29010,
+      "responseBytes": 9190,
+      "phase": "validation",
+      "promptTokens": 786,
+      "completionTokens": 1987,
+      "totalTokens": 2773
+    },
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "requestId": "a611b334-7194-4859-a701-f1e6d55460e3",
+    "extractedAt": "2026-10-28T12:06:28.567Z",
+    "sourceId": "pl-unresolved-times-e6c0ffce-1613-4a5c-b35b-7544a68b9c7f",
+    "sourceText": "FIKCYJNY DOKUMENT TESTOWY. Wizyta w planetarium 9 listopada 2026. Wiadomość sekretariatu: zbiórka o 08:05. Wiadomość wychowawcy: zbiórka o 08:25. Obie dotyczą tej samej grupy. Żadna wiadomość nie zastępuje drugiej; nie wiemy, która godzina jest prawidłowa. Zabierz wodę.",
+    "event": "Wizyta w planetarium",
+    "day": "2026-11-09"
+  },
+  "en-other-event-cancelled": {
+    "status": "ok",
+    "candidates": [
+      {
+        "kind": "meeting",
+        "value": "09:20",
+        "quote": "Meet at 09:20",
+        "day": "2026-11-12",
+        "dateQuote": "12 November 2026"
+      },
+      {
+        "kind": "item",
+        "value": "bring a notebook",
+        "quote": "bring a notebook",
+        "day": "2026-11-12",
+        "dateQuote": "12 November 2026"
+      }
+    ],
+    "warnings": [
+      "Cancelled event 'Sports day on 13 November 2026' mentioned with meeting time 08:15 and instruction to bring trainers was ignored as it no longer applies and does not affect the Science workshop."
+    ],
+    "metrics": {
+      "elapsedMs": 16180,
+      "headersMs": 16175,
+      "responseBytes": 6478,
+      "phase": "validation",
+      "promptTokens": 768,
+      "completionTokens": 1333,
+      "totalTokens": 2101
+    },
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "requestId": "e69196a1-16d4-4fd4-a179-2c8dd47210c3",
+    "extractedAt": "2026-10-28T12:07:33.307Z",
+    "sourceId": "en-other-event-cancelled-b6ad05d8-b645-4017-96f6-35d434cb13b1",
+    "sourceText": "FICTIONAL SCHOOL BULLETIN. The Science workshop on 12 November 2026 is going ahead. Meet at 09:20 and bring a notebook. A different event, the Sports day on 13 November 2026, is cancelled. Its old meeting time of 08:15 and instruction to bring trainers no longer apply. The Science workshop is unaffected.",
+    "event": "Science workshop",
+    "day": "2026-11-12"
+  },
+  "uk-partial-withdrawal": {
+    "status": "ok",
+    "candidates": [
+      {
+        "kind": "meeting",
+        "value": "09:10",
+        "quote": "Збір о 09:10.",
+        "day": "2026-11-11",
+        "dateQuote": "11 листопада 2026 року"
+      },
+      {
+        "kind": "item",
+        "value": "water",
+        "quote": "Візьміть воду та теплу куртку.",
+        "day": "2026-11-11",
+        "dateQuote": "11 листопада 2026 року"
+      },
+      {
+        "kind": "item",
+        "value": "warm jacket",
+        "quote": "Візьміть воду та теплу куртку.",
+        "day": "2026-11-11",
+        "dateQuote": "11 листопада 2026 року"
+      }
+    ],
+    "warnings": [
+      "Requirement to bring lunch was explicitly cancelled; food will be provided by the organizer."
+    ],
+    "metrics": {
+      "elapsedMs": 27111,
+      "headersMs": 27104,
+      "responseBytes": 10163,
+      "phase": "validation",
+      "promptTokens": 781,
+      "completionTokens": 1994,
+      "totalTokens": 2775
+    },
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "requestId": "fcf1f112-2801-494e-bda1-0ea2dde25f55",
+    "extractedAt": "2026-10-28T12:07:17.121Z",
+    "sourceId": "uk-partial-withdrawal-49a72f33-15eb-4d88-90b3-cff27527e468",
+    "sourceText": "ВИГАДАНИЙ ПРИКЛАД. Екскурсія до обсерваторії 11 листопада 2026 року відбудеться. Збір о 09:10. Скасовано лише вимогу принести обід, їжу надасть організатор. Саму екскурсію НЕ скасовано. Візьміть воду та теплу куртку.",
+    "event": "Екскурсія до обсерваторії",
+    "day": "2026-11-11"
+  },
+  "pl-cancellation-fresh": {
+    "status": "ok",
+    "candidates": [],
+    "warnings": [
+      "Event 'Wizyta w teatrze' scheduled for '18 listopada 2026' was cancelled - no preparation is required and no new date has been set.",
+      "Previously announced meeting time 07:20 and requirement to bring water are explicitly marked as outdated (nieaktualne) and must not be treated as active requirements."
+    ],
+    "metrics": {
+      "elapsedMs": 16325,
+      "headersMs": 16320,
+      "responseBytes": 6560,
+      "phase": "validation",
+      "promptTokens": 756,
+      "completionTokens": 1268,
+      "totalTokens": 2024
+    },
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "requestId": "c59d1d84-ec28-4920-94fb-4e979033756c",
+    "extractedAt": "2026-10-28T12:09:36.292Z",
+    "sourceId": "pl-cancellation-fresh-a7b2d440-d859-4385-8967-59cf478d8069",
+    "sourceText": "FIKCYJNE. Wizyta w teatrze 18 listopada 2026 została odwołana. Poprzednie polecenia: zbiórka o 07:20 i zabranie wody są nieaktualne. Nie ustalono nowego terminu. Nie trzeba się przygotowywać.",
+    "event": "Wizyta w teatrze",
+    "day": "2026-11-18"
+  },
+  "en-date-conflict": {
+    "status": "ok",
+    "candidates": [
+      {
+        "kind": "meeting",
+        "value": "08:40",
+        "quote": "Library visit on 16 November 2026, meet at 08:40",
+        "day": "2026-11-16",
+        "dateQuote": "16 November 2026"
+      },
+      {
+        "kind": "meeting",
+        "value": "08:40",
+        "quote": "Library visit on 17 November 2026, meet at 08:40",
+        "day": "2026-11-17",
+        "dateQuote": "17 November 2026"
+      }
+    ],
+    "warnings": [
+      "Ambiguity: two conflicting dates for the same Library visit — 16 November 2026 and 17 November 2026 — both with meet at 08:40. Neither notice supersedes the other and the date is unresolved.",
+      "Planning day 2026-11-16 is context only and must not be assumed correct; explicit confirmation of the event date is required before use."
+    ],
+    "metrics": {
+      "elapsedMs": 46786,
+      "headersMs": 46770,
+      "responseBytes": 16986,
+      "phase": "validation",
+      "promptTokens": 760,
+      "completionTokens": 3432,
+      "totalTokens": 4192
+    },
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "requestId": "49a33bf0-6218-4a32-b9cc-632fd0017ec2",
+    "extractedAt": "2026-10-28T12:09:19.960Z",
+    "sourceId": "en-date-conflict-022862f1-d94d-40cf-a4b0-6c67d46ba193",
+    "sourceText": "FICTIONAL. School office: Library visit on 16 November 2026, meet at 08:40. Teacher: the same Library visit on 17 November 2026, meet at 08:40. Neither notice supersedes the other and the date is unresolved. Do not assume the selected planning date is correct.",
+    "event": "Library visit",
+    "day": "2026-11-16"
+  }
+}

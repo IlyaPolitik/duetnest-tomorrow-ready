@@ -1,0 +1,114 @@
+{
+  "first": {
+    "status": "ok",
+    "candidates": [
+      {
+        "kind": "meeting",
+        "value": "08:20",
+        "quote": "Зустріч біля школи о 08:20.",
+        "day": "2026-12-16",
+        "dateQuote": "Дата: 16 грудня 2026 року."
+      },
+      {
+        "kind": "departure",
+        "value": "08:35",
+        "quote": "Відправлення автобуса о 08:35.",
+        "day": "2026-12-16",
+        "dateQuote": "Дата: 16 грудня 2026 року."
+      },
+      {
+        "kind": "item",
+        "value": "Взяти воду",
+        "quote": "Візьміть із собою воду та дощовик.",
+        "day": "2026-12-16",
+        "dateQuote": "Дата: 16 грудня 2026 року."
+      },
+      {
+        "kind": "item",
+        "value": "Взяти дощовик",
+        "quote": "Візьміть із собою воду та дощовик.",
+        "day": "2026-12-16",
+        "dateQuote": "Дата: 16 грудня 2026 року."
+      }
+    ],
+    "warnings": [],
+    "metrics": {
+      "elapsedMs": 30982,
+      "headersMs": 30978,
+      "responseBytes": 7612,
+      "phase": "validation",
+      "promptTokens": 818,
+      "completionTokens": 1598,
+      "totalTokens": 2416
+    },
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "requestId": "d5096f81-2dbc-4c75-bc10-65129be85d1c",
+    "extractedAt": "2026-11-02T04:30:47.394Z",
+    "sourceId": "6b4a2cc5-f1c5-4332-9c76-5e7af2840b5a",
+    "sourceText": "НАВЧАЛЬНИЙ ЛИСТ. УСІ ДАНІ ВИГАДАНІ.\nШкільна поїздка до музею «Ріверсайд»\nДата: 16 грудня 2026 року.\nЗустріч біля школи о 08:20.\nВідправлення автобуса о 08:35.\nВізьміть із собою воду та дощовик.",
+    "event": "Actions and deadlines in this school message",
+    "day": "2026-11-02"
+  },
+  "update": {
+    "status": "ok",
+    "candidates": [
+      {
+        "kind": "meeting",
+        "value": "08:05",
+        "quote": "Час зустрічі біля школи змінено: тепер о 08:05 замість 08:20.",
+        "day": "2026-12-16",
+        "dateQuote": "16 грудня 2026 року"
+      },
+      {
+        "kind": "departure",
+        "value": "08:35",
+        "quote": "Автобус, як і раніше, відправляється о 08:35.",
+        "day": "2026-12-16",
+        "dateQuote": "16 грудня 2026 року"
+      }
+    ],
+    "warnings": [
+      "Це неповне оновлення: повідомлення посилається на «Решта вимог попереднього листа залишається без змін», але сам попередній лист не надано, тому повний перелік вимог невідомий.",
+      "Час 08:20 згадано лише як скасований історичний час («замість 08:20») і не є чинним."
+    ],
+    "metrics": {
+      "elapsedMs": 22480,
+      "headersMs": 22479,
+      "responseBytes": 11476,
+      "phase": "validation",
+      "promptTokens": 833,
+      "completionTokens": 2300,
+      "totalTokens": 3133
+    },
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "requestId": "5599010b-805d-4cc3-9368-cc8ab455a717",
+    "extractedAt": "2026-11-02T04:31:15.692Z",
+    "sourceId": "a21ec6df-f6ca-4b99-ad6e-71bca2608fe9",
+    "sourceText": "НАВЧАЛЬНЕ ОНОВЛЕННЯ. УСІ ДАНІ ВИГАДАНІ.\nШкільна поїздка до музею «Ріверсайд» 16 грудня 2026 року.\nЧас зустрічі біля школи змінено: тепер о 08:05 замість 08:20.\nАвтобус, як і раніше, відправляється о 08:35. Решта вимог попереднього листа залишається без змін.",
+    "event": "Actions and deadlines in this school message",
+    "day": "2026-11-02"
+  },
+  "cancel": {
+    "status": "ok",
+    "candidates": [],
+    "warnings": [
+      "Подію — поїздку до музею «Ріверсайд» 16 грудня 2026 року — повністю скасовано: приходити на зустріч та готувати речі не потрібно, нову дату не призначено."
+    ],
+    "metrics": {
+      "elapsedMs": 7341,
+      "headersMs": 7341,
+      "responseBytes": 4142,
+      "phase": "validation",
+      "promptTokens": 808,
+      "completionTokens": 704,
+      "totalTokens": 1512
+    },
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "requestId": "c8c70538-a91b-4c19-a001-f1453cf2493b",
+    "extractedAt": "2026-11-02T04:31:35.862Z",
+    "sourceId": "5d4310e8-6f82-442d-b3af-087dfe8f6717",
+    "sourceText": "НАВЧАЛЬНЕ ОНОВЛЕННЯ. УСІ ДАНІ ВИГАДАНІ.\nОновлення: поїздку до музею «Ріверсайд» 16 грудня 2026 року повністю скасовано.\nПриходити на зустріч та готувати речі для цієї поїздки більше не потрібно. Нову дату не призначено.",
+    "event": "Actions and deadlines in this school message",
+    "day": "2026-11-02"
+  }
+}

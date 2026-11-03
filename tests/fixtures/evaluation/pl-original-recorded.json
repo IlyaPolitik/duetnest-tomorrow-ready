@@ -1,0 +1,38 @@
+{
+  "kind": "Recorded live response, development regression only",
+  "recordedAt": "2026-10-28T11:43:38.699Z",
+  "result": {
+    "status": "ok",
+    "candidates": [
+      {
+        "kind": "meeting",
+        "value": "07:40",
+        "quote": "Zbiórka o 07:40.",
+        "day": "2026-11-03",
+        "dateQuote": "3 listopada 2026"
+      },
+      {
+        "kind": "item",
+        "value": "water",
+        "quote": "Prosimy zabrać wodę i kurtkę.",
+        "day": "2026-11-03",
+        "dateQuote": "3 listopada 2026"
+      },
+      {
+        "kind": "item",
+        "value": "jacket",
+        "quote": "Prosimy zabrać wodę i kurtkę.",
+        "day": "2026-11-03",
+        "dateQuote": "3 listopada 2026"
+      }
+    ],
+    "warnings": [],
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "requestId": "b0311ff3-aebf-4312-8819-aa4c9ba1ad04",
+    "extractedAt": "2026-10-28T11:43:55.412Z",
+    "sourceId": "pl-original-35dd658c-5851-4a32-a063-e69a5d52128e",
+    "sourceText": "DANE FIKCYJNE. Wycieczka do muzeum 3 listopada 2026. Zbiórka o 07:40. Prosimy zabrać wodę i kurtkę.",
+    "event": "Wycieczka do muzeum",
+    "day": "2026-11-03"
+  }
+}

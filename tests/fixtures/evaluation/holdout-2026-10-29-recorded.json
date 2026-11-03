@@ -1,0 +1,323 @@
+{
+  "item-cancel": {
+    "status": "ok",
+    "candidates": [
+      {
+        "kind": "meeting",
+        "value": "08:20",
+        "quote": "Meet at 08:20.",
+        "day": "2026-12-16",
+        "dateQuote": "16 December 2026"
+      },
+      {
+        "kind": "item",
+        "value": "water",
+        "quote": "Bring water and a raincoat.",
+        "day": "2026-12-16",
+        "dateQuote": "16 December 2026"
+      },
+      {
+        "kind": "item",
+        "value": "raincoat",
+        "quote": "Bring water and a raincoat.",
+        "day": "2026-12-16",
+        "dateQuote": "16 December 2026"
+      }
+    ],
+    "warnings": [
+      "Packed lunch requirement is cancelled and lunch is provided - do not bring packed lunch as a requirement."
+    ],
+    "metrics": {
+      "elapsedMs": 20323,
+      "headersMs": 20322,
+      "responseBytes": 8105,
+      "phase": "validation",
+      "promptTokens": 756,
+      "completionTokens": 1633,
+      "totalTokens": 2389
+    },
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "requestId": "3d6ccbc6-4835-412a-b8a1-2276524ba7e0",
+    "extractedAt": "2026-10-29T16:17:34.094Z",
+    "sourceId": "item-cancel-5e3fda2f-f339-4453-ac1c-c87e2ba91c02",
+    "sourceText": "— Page 1 —\nI\nFICTIONAL: Riverside museum visit\nDate: 16 December 2026\nMeet at 08:20. Bring water and a raincoat.\nOnly the packed lunch requirement is cancelled.\nThe visit is going ahead; lunch is provided.",
+    "event": "Riverside museum visit",
+    "day": "2026-12-16"
+  },
+  "cancel": {
+    "status": "ok",
+    "candidates": [],
+    "warnings": [
+      "The document explicitly states that 'Wycieczka do muzeum' scheduled for '16 grudnia 2026' is cancelled: 'Cała wycieczka została odwołana. Nie ma nowego terminu.' It also states 'Zbiórka o 08:20 i wszystkie przygotowania nie obowiązują.' - therefore there are no active meeting/departure times, tasks, items or dependencies to extract."
+    ],
+    "metrics": {
+      "elapsedMs": 17623,
+      "headersMs": 17618,
+      "responseBytes": 5810,
+      "phase": "validation",
+      "promptTokens": 764,
+      "completionTokens": 1092,
+      "totalTokens": 1856
+    },
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "requestId": "7724e2f6-eb1b-4b34-88ba-18151d02c5f5",
+    "extractedAt": "2026-10-29T16:17:13.767Z",
+    "sourceId": "cancel-dcdcd1da-840d-4d49-84e6-0c5ede7b431a",
+    "sourceText": "— Page 1 —\nFIKCYJNE PISMO: Wycieczka do muzeum\n\nData: 16 grudnia 2026.\n\nCała wycieczka została odwołana. Nie ma nowego terminu.\nZbiórka o 08:20 i wszystkie przygotowania nie obowiązują.",
+    "event": "Wycieczka do muzeum",
+    "day": "2026-12-16"
+  },
+  "two-events": {
+    "status": "ok",
+    "candidates": [
+      {
+        "kind": "meeting",
+        "value": "08:20",
+        "quote": "Meet at 08:20.",
+        "day": "2026-12-16",
+        "dateQuote": "16 December 2026"
+      },
+      {
+        "kind": "item",
+        "value": "Bring water",
+        "quote": "Bring water.",
+        "day": "2026-12-16",
+        "dateQuote": "16 December 2026"
+      }
+    ],
+    "warnings": [],
+    "metrics": {
+      "elapsedMs": 20197,
+      "headersMs": 20193,
+      "responseBytes": 7041,
+      "phase": "validation",
+      "promptTokens": 757,
+      "completionTokens": 1465,
+      "totalTokens": 2222
+    },
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "requestId": "32b8f417-e97c-4246-b242-beca0219435a",
+    "extractedAt": "2026-10-29T16:17:54.297Z",
+    "sourceId": "two-events-aecc4056-9e5d-49bc-87cb-9cce73f169ec",
+    "sourceText": "— Page 1 —\nFICTIONAL SCHOOL BULLETIN\nRiverside museum visit: 16 December 2026\nMeet at 08:20. Bring water.\nSwimming lesson: 17 December 2026\nSwimming is cancelled. Do not bring a towel.",
+    "event": "Riverside museum visit",
+    "day": "2026-12-16"
+  },
+  "table": {
+    "status": "ok",
+    "candidates": [
+      {
+        "kind": "meeting",
+        "value": "08:20",
+        "quote": "Meeting   08:20",
+        "day": "2026-12-16",
+        "dateQuote": "16 December 2026"
+      },
+      {
+        "kind": "departure",
+        "value": "08:35",
+        "quote": "Coach departure   08:35",
+        "day": "2026-12-16",
+        "dateQuote": "16 December 2026"
+      },
+      {
+        "kind": "item",
+        "value": "water",
+        "quote": "Bring   water and raincoat",
+        "day": "2026-12-16",
+        "dateQuote": "16 December 2026"
+      },
+      {
+        "kind": "item",
+        "value": "raincoat",
+        "quote": "Bring   water and raincoat",
+        "day": "2026-12-16",
+        "dateQuote": "16 December 2026"
+      }
+    ],
+    "warnings": [],
+    "metrics": {
+      "elapsedMs": 11676,
+      "headersMs": 11671,
+      "responseBytes": 5443,
+      "phase": "validation",
+      "promptTokens": 747,
+      "completionTokens": 1172,
+      "totalTokens": 1919
+    },
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "requestId": "87118eb5-5d55-4490-8df1-d8551e8c424b",
+    "extractedAt": "2026-10-29T16:15:36.621Z",
+    "sourceId": "table-ee8d6396-6d9c-45ee-9b51-573718772d3f",
+    "sourceText": "— Page 1 —\nFICTIONAL: Riverside museum visit\nDate: 16 December 2026\nActivity   Time / requirement\nMeeting   08:20\nCoach departure   08:35\nBring   water and raincoat",
+    "event": "Riverside museum visit",
+    "day": "2026-12-16"
+  },
+  "conflict": {
+    "status": "ok",
+    "candidates": [
+      {
+        "kind": "meeting",
+        "value": "08:20",
+        "quote": "School notice: meet at 08:20.",
+        "day": "2026-12-16",
+        "dateQuote": "16 December 2026"
+      },
+      {
+        "kind": "meeting",
+        "value": "08:05",
+        "quote": "Coach office: meet at 08:05.",
+        "day": "2026-12-16",
+        "dateQuote": "16 December 2026"
+      },
+      {
+        "kind": "item",
+        "value": "water",
+        "quote": "Bring water.",
+        "day": "2026-12-16",
+        "dateQuote": "16 December 2026"
+      }
+    ],
+    "warnings": [
+      "Document contains two conflicting active meeting times (08:05 and 08:20) with explicit statement Neither message withdraws the other. Please clarify. - clarification required before use",
+      "Multiple unresolved meeting times for same event; do not assume one is correct"
+    ],
+    "metrics": {
+      "elapsedMs": 44114,
+      "headersMs": 44114,
+      "responseBytes": 13301,
+      "phase": "validation",
+      "promptTokens": 760,
+      "completionTokens": 2762,
+      "totalTokens": 3522
+    },
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "requestId": "4c0b0757-1c64-4703-900c-cbe98b9d924d",
+    "extractedAt": "2026-10-29T16:16:56.141Z",
+    "sourceId": "conflict-174708c7-6de2-414a-8d74-a741f6d734d8",
+    "sourceText": "— Page 1 —\nFICTIONAL: Riverside museum visit\n\nDate: 16 December 2026\n\nSchool notice: meet at 08:20.\n\nCoach office: meet at 08:05.\n\nNeither message withdraws the other. Please clarify.\nBring water.",
+    "event": "Riverside museum visit",
+    "day": "2026-12-16"
+  },
+  "polish": {
+    "status": "ok",
+    "candidates": [
+      {
+        "kind": "meeting",
+        "value": "08:20",
+        "quote": "Zbiórka przy szkole o 08:20.",
+        "day": "2026-12-16",
+        "dateQuote": "16 grudnia 2026"
+      },
+      {
+        "kind": "item",
+        "value": "water",
+        "quote": "Zabierz wodę, żółtą czapkę i ciepłą kurtkę.",
+        "day": "2026-12-16",
+        "dateQuote": "16 grudnia 2026"
+      },
+      {
+        "kind": "item",
+        "value": "yellow cap",
+        "quote": "Zabierz wodę, żółtą czapkę i ciepłą kurtkę.",
+        "day": "2026-12-16",
+        "dateQuote": "16 grudnia 2026"
+      },
+      {
+        "kind": "item",
+        "value": "warm jacket",
+        "quote": "Zabierz wodę, żółtą czapkę i ciepłą kurtkę.",
+        "day": "2026-12-16",
+        "dateQuote": "16 grudnia 2026"
+      }
+    ],
+    "warnings": [],
+    "metrics": {
+      "elapsedMs": 18530,
+      "headersMs": 18530,
+      "responseBytes": 7462,
+      "phase": "validation",
+      "promptTokens": 779,
+      "completionTokens": 1662,
+      "totalTokens": 2441
+    },
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "requestId": "b528b665-e394-4890-be4b-e7e57ce0e63d",
+    "extractedAt": "2026-10-29T16:15:55.154Z",
+    "sourceId": "polish-be56efdf-a7f0-49f0-855a-0fa4054270c0",
+    "sourceText": "— Page 1 —\nHY\nFIKCYJNE PISMO: Wycieczka do muzeum\nData: 16 grudnia 2026.\nZbiórka przy szkole o 08:20.\nZabierz wodę, żółtą czapkę i ciepłą kurtkę.\nNie przynoś śniadania, szkoła zapewnia posiłek.",
+    "event": "Wycieczka do muzeum",
+    "day": "2026-12-16"
+  },
+  "no-year": {
+    "status": "ok",
+    "candidates": [
+      {
+        "kind": "meeting",
+        "value": "08:20",
+        "quote": "Meet at 08:20 on 16 December.",
+        "day": null,
+        "dateQuote": null
+      },
+      {
+        "kind": "item",
+        "value": "water",
+        "quote": "Bring water.",
+        "day": null,
+        "dateQuote": null
+      }
+    ],
+    "warnings": [
+      "Event date '16 December' in source lacks a year - document explicitly states 'This photocopy has no year. Confirm the year with school.' Do not assume planning day 2026-12-16 is the event date.",
+      "Meeting time 08:20 cannot be assigned a complete YYYY-MM-DD date until year is confirmed with school."
+    ],
+    "metrics": {
+      "elapsedMs": 29233,
+      "headersMs": 29230,
+      "responseBytes": 11377,
+      "phase": "validation",
+      "promptTokens": 743,
+      "completionTokens": 2406,
+      "totalTokens": 3149
+    },
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "requestId": "f1eb57d5-30a8-463d-937f-eeb10e7acd4a",
+    "extractedAt": "2026-10-29T16:18:23.536Z",
+    "sourceId": "no-year-5786e827-ca09-4064-bd21-2d4398ee9f99",
+    "sourceText": "— Page 1 —\n—\nFICTIONAL: Riverside museum visit\nMeet at 08:20 on 16 December.\nBring water.\nThis photocopy has no year. Confirm the year with school.",
+    "event": "Riverside museum visit",
+    "day": "2026-12-16"
+  },
+  "partial": {
+    "status": "ok",
+    "candidates": [
+      {
+        "kind": "meeting",
+        "value": "08:05",
+        "quote": "Only the meeting time changes: now 08:05, not 08:20.",
+        "day": "2026-12-16",
+        "dateQuote": "16 December 2026"
+      }
+    ],
+    "warnings": [
+      "Document explicitly replaces previous meeting time 08:20 with new time 08:05; only the current time 08:05 is extracted as active.",
+      "Packing requirements are referenced as 'still apply' but not listed in this update and therefore not extracted."
+    ],
+    "metrics": {
+      "elapsedMs": 16864,
+      "headersMs": 16859,
+      "responseBytes": 6920,
+      "phase": "validation",
+      "promptTokens": 759,
+      "completionTokens": 1468,
+      "totalTokens": 2227
+    },
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "requestId": "8d544a5b-fc0f-41a4-b005-492b2355d74b",
+    "extractedAt": "2026-10-29T16:16:12.021Z",
+    "sourceId": "partial-8651a4c1-8c54-45a7-bf83-46bb0d1e0353",
+    "sourceText": "— Page 1 —\nFICTIONAL UPDATE: Riverside museum visit\nDate: 16 December 2026\nOnly the meeting time changes: now 08:05, not 08:20.\nAll packing requirements in the original letter still apply.\nThis update does not list those items.",
+    "event": "Riverside museum visit",
+    "day": "2026-12-16"
+  }
+}

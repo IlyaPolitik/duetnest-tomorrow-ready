@@ -1,0 +1,107 @@
+[
+  {
+    "id": "pl-unresolved-times",
+    "lang": "PL",
+    "event": "Wizyta w planetarium",
+    "planningDay": "2026-11-09",
+    "text": "FIKCYJNY DOKUMENT TESTOWY. Wizyta w planetarium 9 listopada 2026. Wiadomość sekretariatu: zbiórka o 08:05. Wiadomość wychowawcy: zbiórka o 08:25. Obie dotyczą tej samej grupy. Żadna wiadomość nie zastępuje drugiej; nie wiemy, która godzina jest prawidłowa. Zabierz wodę.",
+    "expected": {
+      "meeting": [
+        "08:05",
+        "08:25"
+      ],
+      "day": "2026-11-09",
+      "must": [
+        "water"
+      ],
+      "note": "Retain both active times and flag unresolved contradiction."
+    }
+  },
+  {
+    "id": "en-full-cancellation",
+    "lang": "EN",
+    "event": "Aquarium visit",
+    "planningDay": "2026-11-10",
+    "text": "FICTIONAL SCHOOL NOTICE. The Aquarium visit on 10 November 2026 is cancelled entirely. This notice replaces the earlier notice for that visit. The old instruction \"Meet at 08:35 and bring a packed lunch\" no longer applies. There is no replacement event and no preparation is required for this visit.",
+    "expected": {
+      "meeting": [],
+      "must": [],
+      "count": 0,
+      "warning": "cancel",
+      "note": "No active obligations from historical quoted instructions."
+    }
+  },
+  {
+    "id": "uk-partial-withdrawal",
+    "lang": "UK",
+    "event": "Екскурсія до обсерваторії",
+    "planningDay": "2026-11-11",
+    "text": "ВИГАДАНИЙ ПРИКЛАД. Екскурсія до обсерваторії 11 листопада 2026 року відбудеться. Збір о 09:10. Скасовано лише вимогу принести обід, їжу надасть організатор. Саму екскурсію НЕ скасовано. Візьміть воду та теплу куртку.",
+    "expected": {
+      "meeting": [
+        "09:10"
+      ],
+      "day": "2026-11-11",
+      "must": [
+        "water",
+        "jacket"
+      ],
+      "forbidden": [
+        "lunch"
+      ],
+      "note": "Cancelling an item must not cancel the event."
+    }
+  },
+  {
+    "id": "en-other-event-cancelled",
+    "lang": "EN",
+    "event": "Science workshop",
+    "planningDay": "2026-11-12",
+    "text": "FICTIONAL SCHOOL BULLETIN. The Science workshop on 12 November 2026 is going ahead. Meet at 09:20 and bring a notebook. A different event, the Sports day on 13 November 2026, is cancelled. Its old meeting time of 08:15 and instruction to bring trainers no longer apply. The Science workshop is unaffected.",
+    "expected": {
+      "meeting": [
+        "09:20"
+      ],
+      "day": "2026-11-12",
+      "must": [
+        "notebook"
+      ],
+      "forbidden": [
+        "trainers"
+      ],
+      "note": "Cancellation of another event must not erase the selected event."
+    }
+  },
+  {
+    "id": "en-date-conflict",
+    "lang": "EN",
+    "event": "Library visit",
+    "planningDay": "2026-11-16",
+    "text": "FICTIONAL. School office: Library visit on 16 November 2026, meet at 08:40. Teacher: the same Library visit on 17 November 2026, meet at 08:40. Neither notice supersedes the other and the date is unresolved. Do not assume the selected planning date is correct.",
+    "expected": {
+      "meeting": [
+        "08:40",
+        "08:40"
+      ],
+      "dates": [
+        "2026-11-16",
+        "2026-11-17"
+      ],
+      "note": "Preserve both disputed dates; no silent winner."
+    }
+  },
+  {
+    "id": "pl-cancellation-fresh",
+    "lang": "PL",
+    "event": "Wizyta w teatrze",
+    "planningDay": "2026-11-18",
+    "text": "FIKCYJNE. Wizyta w teatrze 18 listopada 2026 została odwołana. Poprzednie polecenia: zbiórka o 07:20 i zabranie wody są nieaktualne. Nie ustalono nowego terminu. Nie trzeba się przygotowywać.",
+    "expected": {
+      "meeting": [],
+      "must": [],
+      "count": 0,
+      "warning": "cancel",
+      "note": "Fresh Polish cancellation."
+    }
+  }
+]

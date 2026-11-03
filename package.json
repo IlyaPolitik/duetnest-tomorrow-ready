@@ -1,0 +1,39 @@
+{
+  "name": "duetnest-meta-hackathon",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 4318 --strictPort",
+    "build": "tsc --noEmit && vite build",
+    "test": "node --test tests/*.test.ts",
+    "preview": "vite preview --host 127.0.0.1 --port 4318 --strictPort",
+    "documents:assets": "node scripts/prepare-document-assets.mjs",
+    "predev": "npm run documents:assets && npm run bag:assets && npm run voice:assets",
+    "prebuild": "npm run documents:assets && npm run bag:assets && npm run voice:assets",
+    "bag:assets": "node scripts/prepare-bag-model.mjs",
+    "voice:assets": "node scripts/prepare-voice-assets.mjs",
+    "demo:build": "tsc --noEmit && vite build --config demo/vite.config.ts --mode judge",
+    "demo:preview": "vite preview --config demo/vite.config.ts --host 127.0.0.1 --port 4320 --strictPort"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "4.3.1",
+    "@tensorflow-models/coco-ssd": "2.2.3",
+    "@tensorflow/tfjs": "4.22.0",
+    "@tesseract.js-data/eng": "1.0.0",
+    "@tesseract.js-data/pol": "1.0.0",
+    "@tesseract.js-data/rus": "1.0.0",
+    "@tesseract.js-data/ukr": "1.0.0",
+    "pdfjs-dist": "6.4.299",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "tesseract.js": "7.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "typescript": "7.0.2",
+    "vite": "8.3.5"
+  }
+}

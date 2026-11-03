@@ -1,0 +1,165 @@
+{
+  "cancellation-scan": {
+    "status": "ok",
+    "candidates": [],
+    "warnings": [
+      "Observatory visit on 23 November 2026 is cancelled - document states 'The entire visit is cancelled. No new date is set.' and 'Previous meeting at 08:50 and all preparation requirements for this visit no longer apply.' No active requirements remain."
+    ],
+    "metrics": {
+      "elapsedMs": 14841,
+      "headersMs": 14840,
+      "responseBytes": 3742,
+      "phase": "validation",
+      "promptTokens": 755,
+      "completionTokens": 647,
+      "totalTokens": 1402
+    },
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "requestId": "404a1eba-40b4-4e6b-a92a-ea55c2f84fd1",
+    "extractedAt": "2026-10-28T13:39:00.171Z",
+    "sourceId": "cancellation-scan-9c708608-d28c-4801-bc6b-9a2dde04b4cb",
+    "sourceText": "— Page 1 —\nFICTIONAL CANCELLATION NOTICE\nObservatory visit: 23 November 2026.\n\nThe entire visit is cancelled. No new date is set.\nPrevious meeting at 08:50 and all preparation\nrequirements for this visit no longer apply.",
+    "event": "Observatory visit",
+    "day": "2026-11-23"
+  },
+  "revision-photo": {
+    "status": "ok",
+    "candidates": [
+      {
+        "kind": "meeting",
+        "value": "08:50",
+        "quote": "Zbiorka o 08:50 zamiast 08:30.",
+        "day": "2026-11-23",
+        "dateQuote": "23 listopada 2026"
+      },
+      {
+        "kind": "item",
+        "value": "water",
+        "quote": "Zabierz wode i ciepla kurtke.",
+        "day": "2026-11-23",
+        "dateQuote": "23 listopada 2026"
+      },
+      {
+        "kind": "item",
+        "value": "warm jacket",
+        "quote": "Zabierz wode i ciepla kurtke.",
+        "day": "2026-11-23",
+        "dateQuote": "23 listopada 2026"
+      }
+    ],
+    "warnings": [
+      "Meeting time 08:30 was explicitly superseded and replaced by 08:50 (zamiast 08:30); only the current time 08:50 extracted."
+    ],
+    "metrics": {
+      "elapsedMs": 48649,
+      "headersMs": 48648,
+      "responseBytes": 8051,
+      "phase": "validation",
+      "promptTokens": 776,
+      "completionTokens": 1801,
+      "totalTokens": 2577
+    },
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "requestId": "8923033b-161a-4400-a784-33e1a129ef4d",
+    "extractedAt": "2026-10-28T13:38:45.325Z",
+    "sourceId": "revision-photo-0cb6488c-bc85-442a-bbe0-7e4890e609d3",
+    "sourceText": "— Page 1 —\nFIKCYJNE PISMO - pelna aktualizacja\n\nWycieczka do obserwatorium: 23 listopada 2026.\n\nZbiorka o 08:50 zamiast 08:30.\n\nZabierz wode i ciepla kurtke.\n\nNie przynos obiadu. Posilek jest zapewniony.\nDD",
+    "event": "Observatory visit",
+    "day": "2026-11-23"
+  },
+  "mixed-pdf": {
+    "status": "ok",
+    "candidates": [
+      {
+        "kind": "meeting",
+        "value": "09:05",
+        "quote": "Meet at 09:05, replacing the old 08:30 time.",
+        "day": "2026-11-23",
+        "dateQuote": "23 November 2026"
+      },
+      {
+        "kind": "item",
+        "value": "water",
+        "quote": "Bring water and a warm jacket.",
+        "day": "2026-11-23",
+        "dateQuote": "23 November 2026"
+      },
+      {
+        "kind": "item",
+        "value": "warm jacket",
+        "quote": "Bring water and a warm jacket.",
+        "day": "2026-11-23",
+        "dateQuote": "23 November 2026"
+      }
+    ],
+    "warnings": [
+      "The document states that 09:05 replaces the old 08:30 time; the superseded time 08:30 was not extracted."
+    ],
+    "metrics": {
+      "elapsedMs": 39553,
+      "headersMs": 39549,
+      "responseBytes": 7553,
+      "phase": "validation",
+      "promptTokens": 768,
+      "completionTokens": 1628,
+      "totalTokens": 2396
+    },
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "requestId": "3386de1e-e00e-4809-ac2f-ef27fe2866e0",
+    "extractedAt": "2026-10-28T13:39:39.727Z",
+    "sourceId": "mixed-pdf-497f6711-2611-4d86-822d-33bc4beb8882",
+    "sourceText": "— Page 1 —\nSchool notice - see the scanned correction below.\nFICTIONAL CORRECTION\n\nObservatory visit: 23 November 2026.\n\nMeet at 09:05, replacing the old 08:30 time.\n\nBring water and a warm jacket.\n\nDo not bring lunch; food is provided.",
+    "event": "Observatory visit",
+    "day": "2026-11-23"
+  },
+  "original-pdf": {
+    "status": "ok",
+    "candidates": [
+      {
+        "kind": "meeting",
+        "value": "08:30",
+        "quote": "Meet at 08:30.",
+        "day": "2026-11-23",
+        "dateQuote": "23 November 2026"
+      },
+      {
+        "kind": "item",
+        "value": "water",
+        "quote": "Bring water and a packed lunch.",
+        "day": "2026-11-23",
+        "dateQuote": "23 November 2026"
+      },
+      {
+        "kind": "item",
+        "value": "packed lunch",
+        "quote": "Bring water and a packed lunch.",
+        "day": "2026-11-23",
+        "dateQuote": "23 November 2026"
+      },
+      {
+        "kind": "item",
+        "value": "warm jacket",
+        "quote": "Bring a warm jacket.",
+        "day": "2026-11-23",
+        "dateQuote": "23 November 2026"
+      }
+    ],
+    "warnings": [],
+    "metrics": {
+      "elapsedMs": 47209,
+      "headersMs": 47208,
+      "responseBytes": 7396,
+      "phase": "validation",
+      "promptTokens": 768,
+      "completionTokens": 1552,
+      "totalTokens": 2320
+    },
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "requestId": "e68db24e-0f72-4e37-a61b-1052c475d8ae",
+    "extractedAt": "2026-10-28T13:37:56.671Z",
+    "sourceId": "original-pdf-024b5bfa-9e5c-4d69-8e93-d092bed7a38c",
+    "sourceText": "— Page 1 —\nFICTIONAL SCHOOL NOTICE\nObservatory visit: 23 November 2026.\nMeet at 08:30. Bring water and a packed lunch.\n\n— Page 2 —\nFICTIONAL NOTICE - page 2\nObservatory visit: 23 November 2026.\nBring a warm jacket.",
+    "event": "Observatory visit",
+    "day": "2026-11-23"
+  }
+}

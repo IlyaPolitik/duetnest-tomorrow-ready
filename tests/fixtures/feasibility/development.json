@@ -1,0 +1,14 @@
+[
+ {"name":"01 original school morning","patch":{},"status":"feasible","arrival":[470,475],"repair":null},
+ {"name":"02 earlier meeting allows bag transfer","patch":{"meeting":465},"allow":true,"status":"infeasible","arrival":[470,475],"repair":["bag"]},
+ {"name":"03 missing travel is not zero","patch":{"travel":null},"allow":true,"status":"unknown","repair":null},
+ {"name":"04 zero travel is explicit","patch":{"travel":{"min":0,"max":0}},"status":"feasible","arrival":[450,450],"repair":null},
+ {"name":"05 reversed travel range","patch":{"travel":{"min":25,"max":20}},"status":"invalid","repair":null},
+ {"name":"06 too little evening time","patch":{"meeting":465,"evening":10},"allow":true,"status":"infeasible","repair":null},
+ {"name":"07 transfer not permitted","patch":{"meeting":465},"status":"infeasible","repair":null},
+ {"name":"08 arriving on time lacks requested buffer","patch":{"buffer":10},"allow":true,"status":"infeasible","arrival":[470,475],"repair":["bag"]},
+ {"name":"09 meeting before morning availability","patch":{"meeting":420},"allow":true,"status":"infeasible","repair":null},
+ {"name":"10 prerequisite cannot move","patch":{"meeting":465,"evening":30,"preparation":[{"id":"wash","label":"Wash bottle","duration":{"min":5,"max":5},"after":[],"mayMove":false},{"id":"bag","label":"Pack bag","duration":{"min":15,"max":15},"after":["wash"],"mayMove":true}]},"status":"infeasible","repair":null},
+ {"name":"11 moving dependency closure","patch":{"meeting":465,"evening":20,"preparation":[{"id":"wash","label":"Wash bottle","duration":{"min":5,"max":5},"after":[],"mayMove":true},{"id":"bag","label":"Pack bag","duration":{"min":15,"max":15},"after":["wash"],"mayMove":true}]},"status":"infeasible","repair":["wash","bag"]},
+ {"name":"12 unconfirmed external dependency","patch":{"preparation":[{"id":"bag","label":"Pack school bag","duration":{"min":15,"max":15},"after":[],"mayMove":true,"unresolved":"Who will bring the bag home?"}]},"status":"unknown","repair":null}
+]

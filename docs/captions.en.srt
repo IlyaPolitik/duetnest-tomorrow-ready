@@ -1,0 +1,195 @@
+1
+00:00:00,000 --> 00:00:03,414
+You packed the water. The school chat changes the time.
+
+2
+00:00:03,414 --> 00:00:06,146
+Then cancels the trip. What still needs doing?
+
+3
+00:00:08,000 --> 00:00:11,169
+What still needs doing? And what can you stop worrying
+
+4
+00:00:11,169 --> 00:00:11,485
+about?
+
+5
+00:00:15,000 --> 00:00:18,209
+Paste a chat about one event. Give its message date
+
+6
+00:00:18,209 --> 00:00:21,418
+if known. Tomorrow Ready turns the conversation into a plan
+
+7
+00:00:21,418 --> 00:00:22,381
+you can review.
+
+8
+00:00:25,000 --> 00:00:28,086
+The fictional chat is Ukrainian. The form is due today
+
+9
+00:00:28,086 --> 00:00:31,172
+at eight p.m. The trip is tomorrow at eight twenty.
+
+10
+00:00:31,172 --> 00:00:34,258
+Water and a raincoat are required. The toy question is
+
+11
+00:00:34,258 --> 00:00:34,567
+excluded.
+
+12
+00:00:37,000 --> 00:00:40,269
+You returned the form and packed the water. Mark both
+
+13
+00:00:40,269 --> 00:00:43,537
+done. The raincoat becomes the next step. No second account
+
+14
+00:00:43,537 --> 00:00:44,191
+is needed.
+
+15
+00:00:47,000 --> 00:00:50,021
+Now the school moves the meeting to eight oh five.
+
+16
+00:00:50,021 --> 00:00:53,043
+This message changes only the time. It does not list
+
+17
+00:00:53,043 --> 00:00:54,251
+the packing items again.
+
+18
+00:00:59,000 --> 00:01:02,954
+Attach the update to the same event. Review the time
+
+19
+00:01:02,954 --> 00:01:06,908
+replacement. The app keeps the form, water, and raincoat requirements.
+
+20
+00:01:06,908 --> 00:01:10,862
+Your completed work stays checked. Confirm after reviewing the change.
+
+21
+00:01:13,000 --> 00:01:16,914
+The updated plan explains the difference. The meeting is earlier.
+
+22
+00:01:16,914 --> 00:01:20,827
+Your completed work survives. The next step remains finding the
+
+23
+00:01:20,827 --> 00:01:21,218
+raincoat.
+
+24
+00:01:23,000 --> 00:01:26,234
+Then the chat says the trip is cancelled. The app
+
+25
+00:01:26,234 --> 00:01:29,467
+proposes the exact statement, with the sender and time still
+
+26
+00:01:29,467 --> 00:01:32,054
+attached. A question or rumour is not enough.
+
+27
+00:01:35,000 --> 00:01:38,577
+The app proposes the exact cancellation quotation. It has not
+
+28
+00:01:38,577 --> 00:01:42,154
+applied the cancellation yet. The parent checks the event and
+
+29
+00:01:42,154 --> 00:01:45,731
+confirms the scope. An empty model answer alone cannot cancel
+
+30
+00:01:45,731 --> 00:01:46,446
+the plan.
+
+31
+00:01:49,000 --> 00:01:52,433
+Now the app says no preparation is needed for this
+
+32
+00:01:52,433 --> 00:01:55,866
+event. Those active tasks leave the list. Other event plans
+
+33
+00:01:55,866 --> 00:01:56,553
+remain unchanged.
+
+34
+00:01:59,000 --> 00:02:02,580
+If cancellation was a mistake, restore the previous version. The
+
+35
+00:02:02,580 --> 00:02:06,160
+earlier meeting time returns. The form and water stay done.
+
+36
+00:02:06,160 --> 00:02:08,308
+You do not rebuild your plan.
+
+37
+00:02:09,000 --> 00:02:13,082
+Meta Muse Spark Open interprets the language through Fireworks. Local
+
+38
+00:02:13,082 --> 00:02:17,165
+quotation and date checks validate the draft. Our revision logic
+
+39
+00:02:17,165 --> 00:02:21,247
+preserves state, and the parent approves changes. This separation makes
+
+40
+00:02:21,247 --> 00:02:22,472
+the result inspectable.
+
+41
+00:02:23,000 --> 00:02:26,845
+The source includes regression tests and a key-free replay. This
+
+42
+00:02:26,845 --> 00:02:30,690
+edited video uses recorded responses to fictional messages. It does
+
+43
+00:02:30,690 --> 00:02:32,997
+not simulate a live response speed.
+
+44
+00:02:35,000 --> 00:02:39,193
+This is a focused prototype. Model output still needs review.
+
+45
+00:02:39,193 --> 00:02:43,386
+Broad real-world accuracy and independent parent acceptance remain unproven. We
+
+46
+00:02:43,386 --> 00:02:45,482
+make no measured time-saving claim.
+
+47
+00:02:46,000 --> 00:02:49,584
+For this prototype, the promise is focused: one parent, one
+
+48
+00:02:49,584 --> 00:02:53,167
+event, a plan that survives change. Keep what is done.
+
+49
+00:02:53,167 --> 00:02:56,392
+See what is different. Know what to do next.

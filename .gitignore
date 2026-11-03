@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+coverage/
+public/document-assets/
+public/bag-model/
+public/voice-model/
+public/voice-runtime/
+dist-demo/

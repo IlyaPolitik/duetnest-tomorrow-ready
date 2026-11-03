@@ -1,0 +1,48 @@
+import {ModelWarnings} from './ModelWarnings.tsx';
+import {useEffect,useRef,useState} from 'react';
+import {locale,translate,uiText,dateLocale} from './i18n.ts';
+import {eventPlans,setPlanActionDone,timeConflict,undoRevision} from './action-inbox.ts';
+import {planView} from './plan-view.ts';
+import type {Inbox,EventPlan,PlanAction} from './action-inbox.ts';
+import type {Candidate} from './analysis-contract.ts';
+export function actionLabel(c:Candidate,language=locale()){return c.kind==='meeting'?uiText('Прийти на зустріч','Attend the meeting',language):c.kind==='departure'?uiText('Бути готовими до відправлення','Be ready for departure',language):translate(c.value,language);}
+export function dueLabel(c:Candidate,language=locale()){
+ const say=(a:string,b:string)=>uiText(a,b,language),timed=['meeting','departure'].includes(c.kind);
+ if(!c.day)return timed?`${c.value} · ${say('дату треба уточнити','clarify the date')}`:say('Строк не вказано — треба уточнити','Deadline not stated — clarify it');
+ const date=new Intl.DateTimeFormat(dateLocale(language),{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}).format(new Date(c.day+'T12:00:00Z'));
+ return timed?`${date} · ${c.value}`:c.kind==='item'?`${say('На подію','For the event on')} ${date}`:`${say('До','By')} ${date}`;
+}
+export function EventPlans({state,commit,onUpdate,onNew}:{state:Inbox;commit:(s:Inbox)=>boolean;onUpdate:(p:EventPlan)=>void;onNew:()=>void}){
+ const rootRef=useRef<HTMLHeadingElement>(null);
+ const heads=eventPlans(state).map(p=>p.head).join('|');
+ useEffect(()=>{rootRef.current?.focus({preventScroll:true});rootRef.current?.closest('main')?.scrollIntoView({block:'start',behavior:'instant'});},[heads]);
+ const language=locale(),say=(a:string,b:string)=>uiText(a,b,language);
+ const[notice,setNotice]=useState('');
+ const nextButtons=useRef(new Map<string,HTMLButtonElement>()),pendingFocus=useRef<string|null>(null);
+ useEffect(()=>{if(pendingFocus.current){(nextButtons.current.get(pendingFocus.current)??rootRef.current)?.focus({preventScroll:true});pendingFocus.current=null;}},[state]);
+ function toggle(a:PlanAction,p:EventPlan){if(commit(setPlanActionDone(state,p.id,a.id))){pendingFocus.current=p.id;setNotice(say(a.done?'Повернуто до справ: ':'Виконано: ',a.done?'Back on your list: ':'Done: ')+actionLabel(a.candidate,language));}}
+ function item(a:PlanAction,p:EventPlan){const c=a.candidate,conflict=timeConflict(p.actions.map(x=>x.candidate),c);return <article key={a.id} className={`inbox-action ${a.done?'is-done':''}`}>
+ {c.kind!=='dependency'&&<button className="inbox-tick" aria-label={say('Позначити: ','Check: ')+actionLabel(c,language)} aria-pressed={a.done} disabled={conflict} onClick={()=>toggle(a,p)}>{a.done?'✓':''}</button>}
+ <div><h3>{actionLabel(c,language)}</h3><p className={conflict||!c.day?'inbox-uncertain':'inbox-when'}>{conflict?say('Є різний час. Уточніть перед виходом.','Conflicting times. Clarify before leaving.'):dueLabel(c,language)}</p><details><summary>{say('Підстава з листа','Message evidence')}</summary><blockquote>{c.quote}</blockquote>{c.dateQuote&&<p>{c.dateQuote}</p>}</details></div></article>;}
+ return <section className="inbox-saved"><div className="cycle-heading plan-page-heading"><div><p className="inbox-eyebrow">{say('ВАШ ОСОБИСТИЙ ПЛАН','YOUR PERSONAL PLAN')}</p><h1 tabIndex={-1} ref={rootRef}>{say('Зрозуміло, що далі.','Know your next step.')}</h1></div><button className="inbox-secondary" onClick={onNew}>{say('+ Нова подія','+ New event')}</button></div>
+ <p className="plan-announcement" role="status">{notice}</p>
+ {eventPlans(state).map(p=>{
+ const {pending,done,next,meeting,departure,meetingChange,conflicting}=planView(p);
+ const head=p.history.find(l=>l.id===p.head)!;
+ const day=(meeting??departure)?.candidate.day;
+ const date=day?new Intl.DateTimeFormat(dateLocale(language),{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}).format(new Date(day+'T12:00:00Z')):null;
+ return <section key={p.id} className={`cycle-plan plan-card ${p.cancelled?'is-cancelled':''}`} aria-label={p.title}>
+ <div className="cycle-heading plan-card-heading"><div><p className="inbox-eyebrow">{p.cancelled?say('ПОДІЮ СКАСОВАНО','EVENT CANCELLED'):date??say('ДАТУ ТРЕБА УТОЧНИТИ','DATE TO CONFIRM')}</p><h2>{p.title}</h2></div><span className="cycle-state">{p.cancelled?say('Скасовано','Cancelled'):say(`${done.length} з ${p.actions.length} виконано`,`${done.length} of ${p.actions.length} done`)}</span></div>
+ {p.cancelled?<div className="plan-cancelled"><span className="plan-cancel-icon" aria-hidden="true">↶</span><div><h3>{say('Цю подію можна зняти з планів.','Take this event off your to-do list.')}</h3><p>{say('Зустріч і підготовка більше не потрібні. Виконане залишилось в історії.','The meeting and preparation are no longer needed. Completed work stays in history.')}</p></div></div>:<>
+ {conflicting.length>0&&<p className="inbox-caution" role="status">{say('Спочатку уточніть час: у листах є різні варіанти. Інші справи можна продовжувати.','Clarify the time: messages contain conflicting times. You can continue other actions.')}</p>}
+ {(meeting||departure)&&<div className="plan-schedule"><div><span>{meeting?say('Зустріч','Meeting'):say('Відправлення','Departure')}</span><div className="plan-clock">{meeting&&meetingChange?.before&&meetingChange.before.value!==meeting.candidate.value&&<><del>{meetingChange.before.value}</del><span className="plan-time-arrow" aria-label={say('змінено на','changed to')}>→</span></>}<strong>{(meeting??departure)!.candidate.value}</strong></div><small>{day?date:say('Дата в листі не вказана — уточніть','Date missing from the message — clarify')}</small></div>{meeting&&departure&&<div className="plan-departure"><span>{say('Відправлення','Departure')}</span><strong>{departure.candidate.value}</strong>{departure.candidate.day!==meeting.candidate.day&&<small>{dueLabel(departure.candidate,language)}</small>}</div>}</div>}
+ {done.length>0&&<div className="plan-kept"><span className="plan-kept-label">{say('УЖЕ ВИКОНАНО','ALREADY DONE')}</span><div>{done.map(a=><button key={a.id} className="plan-done-chip" disabled={timeConflict(p.actions.map(x=>x.candidate),a.candidate)} aria-label={say('Повернути до невиконаного: ','Mark as not done: ')+actionLabel(a.candidate,language)} onClick={()=>toggle(a,p)}><span aria-hidden="true">✓</span> {actionLabel(a.candidate,language)}</button>)}</div></div>}
+ <div className={`plan-next ${next?'':'plan-next-empty'}`}><div><span className="plan-next-label">{say('НАСТУПНИЙ КРОК','YOUR NEXT STEP')}</span><h3>{next?actionLabel(next.candidate,language):pending.length?say('Уточніть відкриті питання','Clarify the open questions'):p.actions.length?say('Усі справи зі списку виконано','Everything on this list is done'):say('У листі немає підтверджених справ','No confirmed actions in this message')}</h3><p>{next?dueLabel(next.candidate,language):say('Нові повідомлення можуть змінити план.','New messages may change the plan.')}</p>{next&&<details><summary>{say('Підстава з листа','Message evidence')}</summary><blockquote>{next.candidate.quote}</blockquote>{next.candidate.dateQuote&&<p>{next.candidate.dateQuote}</p>}</details>}</div>{next&&<button ref={node=>{if(node)nextButtons.current.set(p.id,node);else nextButtons.current.delete(p.id);}} className="inbox-primary plan-next-done" aria-label={say('Готово: ','Done: ')+actionLabel(next.candidate,language)} onClick={()=>toggle(next,p)}><span aria-hidden="true">✓</span> {say('Готово','Done')}</button>}</div>
+ <button className="inbox-secondary plan-update" onClick={()=>onUpdate(p)}><span aria-hidden="true">↗</span> {say('Надійшов новий лист','A new message arrived')}</button>
+ {pending.filter(a=>a.id!==next?.id).length>0&&<div className="plan-later"><h3>{say('Ще у плані','Also on your list')}</h3><div className="inbox-actions">{pending.filter(a=>a.id!==next?.id).map(a=>item(a,p))}</div></div>}
+ </>}
+ {state.revisions?.[p.head]&&<div className="plan-revision"><details open={p.cancelled}><summary>{p.cancelled?say('Чому подію скасовано','Why this event was cancelled'):say('Що змінилося · попередні справи збережено','What changed · previous work kept')}</summary>{p.cancelled?<blockquote>{state.revisions[p.head].quote}</blockquote>:<>{p.changes.map((c,i)=><p key={i}>{c.before?<><span>{actionLabel(c.before,language)} · {dueLabel(c.before,language)}</span> → </>:say('Додано: ','Added: ')}<strong>{c.after&&`${actionLabel(c.after,language)} · ${dueLabel(c.after,language)}`}</strong>{c.wasDone&&<small> {say('Змінилося завдання — треба перевірити знову.','Changed action — check it again.')}</small>}</p>)}<p>{say(`${p.retained} попередніх дій збережено разом із позначками.`,`${p.retained} previous actions kept with checkmarks.`)}</p></>}</details><button className="inbox-edit" onClick={()=>commit(undoRevision(state,p.head))}>{say('Повернути попередню версію','Restore previous version')}</button></div>}
+ {!p.cancelled&&<ModelWarnings warnings={head.result.warnings}/>}
+ <details className="cycle-history"><summary>{say(`Історія листів (${p.history.length})`,`Message history (${p.history.length})`)}</summary>{p.history.map(l=><section key={l.id}><h3>{l.title}</h3>{state.undone?.includes(l.id)&&<p>{say('Застосування цього оновлення скасовано.','This update was reverted.')}</p>}{l.result.messageDate&&<p>{say('Дата повідомлення, вказана вами: ','Message date supplied by you: ')}{l.result.messageDate}</p>}<pre>{l.text}</pre><ul>{l.result.candidates.map((c,i)=><li key={i}>{state.done[l.id+':'+i]?'✓ ':''}{actionLabel(c,language)} · {dueLabel(c,language)}</li>)}</ul></section>)}</details>
+ </section>;})}</section>;
+}

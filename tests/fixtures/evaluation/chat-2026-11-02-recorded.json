@@ -1,0 +1,58 @@
+{
+  "change": {
+    "status": "ok",
+    "candidates": [
+      {
+        "kind": "meeting",
+        "value": "08:05",
+        "quote": "завтра зустрічаємося о 08:05 замість 08:20",
+        "day": "2026-12-16",
+        "dateQuote": "завтра"
+      }
+    ],
+    "warnings": [
+      "У повідомленні сказано «Решта вимог без змін», але сам перелік вимог у цьому фрагменті відсутній — перевірте попередні повідомлення з деталями поїздки."
+    ],
+    "metrics": {
+      "elapsedMs": 35393,
+      "headersMs": 35386,
+      "responseBytes": 8623,
+      "phase": "validation",
+      "promptTokens": 1046,
+      "completionTokens": 1760,
+      "totalTokens": 2806
+    },
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "requestId": "62de86bc-648e-4401-b2ec-927432310e59",
+    "extractedAt": "2026-11-02T09:59:43.313Z",
+    "sourceId": "chat-change",
+    "sourceText": "[19:00] Вчителька: Щодо завтрашньої поїздки до музею: завтра зустрічаємося о 08:05 замість 08:20. Решта вимог без змін.\n[19:02] Мама: А може все-таки 08:20?\n[19:03] Вчителька: Ні, чинний час 08:05.",
+    "messageDate": "2026-12-15",
+    "event": "One school museum trip",
+    "day": "2026-11-02"
+  },
+  "cancel": {
+    "status": "ok",
+    "candidates": [],
+    "warnings": [
+      "Увага: поїздку до музею повністю скасовано — жодних дій не потрібно. За повідомленням вчительки на зустріч о 08:05 приходити не потрібно."
+    ],
+    "metrics": {
+      "elapsedMs": 14206,
+      "headersMs": 14206,
+      "responseBytes": 3932,
+      "phase": "validation",
+      "promptTokens": 1032,
+      "completionTokens": 690,
+      "totalTokens": 1722
+    },
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "requestId": "6d561fc9-6fa2-4488-894b-79a033a6145a",
+    "extractedAt": "2026-11-02T09:59:57.520Z",
+    "sourceId": "chat-cancel",
+    "sourceText": "[19:20] Мама: Кажуть, поїздку можуть скасувати?\n[19:25] Вчителька: Поїздку до музею скасовано. Завтра не приходьте на зустріч о 08:05.\n[19:26] Тато: Дякую!",
+    "messageDate": "2026-12-15",
+    "event": "One school museum trip",
+    "day": "2026-11-02"
+  }
+}

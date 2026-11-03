@@ -1,0 +1,74 @@
+[
+  {
+    "id": "original-pdf",
+    "file": "original-two-pages.pdf",
+    "lang": "EN",
+    "meeting": [
+      "08:30"
+    ],
+    "must": [
+      "water",
+      "lunch",
+      "jacket"
+    ],
+    "pages": 2,
+    "event": "Observatory visit",
+    "planningDay": "2026-11-23",
+    "day": "2026-11-23",
+    "sha256": "7bc147e359ca27c1881f7e29aa8f0d1bfe72feb787acebbb480ba37daf4f5325"
+  },
+  {
+    "id": "revision-photo",
+    "file": "revision-skew-shadow.jpg",
+    "lang": "PL",
+    "meeting": [
+      "08:50"
+    ],
+    "must": [
+      "water",
+      "jacket"
+    ],
+    "forbidden": [
+      "lunch"
+    ],
+    "pages": 1,
+    "event": "Observatory visit",
+    "planningDay": "2026-11-23",
+    "day": "2026-11-23",
+    "sha256": "bd4f6f9c8e2846f786e98c49b4362149ec612ea509d1fec03d46bc60a4a173ce"
+  },
+  {
+    "id": "cancellation-scan",
+    "file": "cancellation-scan.pdf",
+    "lang": "EN",
+    "meeting": [],
+    "must": [],
+    "count": 0,
+    "warning": "cancel",
+    "pages": 1,
+    "event": "Observatory visit",
+    "planningDay": "2026-11-23",
+    "day": "2026-11-23",
+    "sha256": "a596ec77ffdee57b81803f210a4694cc42e7610d248526fad6ea02eb3d1b9159"
+  },
+  {
+    "id": "mixed-pdf",
+    "file": "mixed-header-and-scan.pdf",
+    "lang": "EN",
+    "meeting": [
+      "09:05"
+    ],
+    "must": [
+      "water",
+      "jacket"
+    ],
+    "forbidden": [
+      "lunch"
+    ],
+    "pages": 1,
+    "event": "Observatory visit",
+    "planningDay": "2026-11-23",
+    "day": "2026-11-23",
+    "sha256": "7335e44018d89a4ffcfc60b2e7e272413589e9a457674695f8a216b218f102ae"
+  }
+]
