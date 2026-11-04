@@ -14,7 +14,7 @@ Open http://127.0.0.1:4322/payments.html. The host and port are intentional: the
 
 Connect an **existing Sandbox** application and its Business account's merchant ID in the setup form. The server checks OAuth credentials and saves `.env.paypal` with owner-only file permissions. Credentials never go to the client status endpoint or client bundle. `.env.paypal` and `.payment-data/` are excluded from Git. Do not publish or copy them into a demo package.
 
-For optional live AI extraction, use `.env.paypal.example` as the field reference. `PAYPAL_AI_KEY` is an existing Fireworks key; `PAYPAL_AI_CALL_LIMIT` defaults to zero. Explicitly authorized calls are counted durably before dispatch, including failed calls. A restart does not renew the budget. The November 4 owner authorization is **4 calls in this local workspace**; 1 was used for the accepted example. Do not reset or delete the ledger to renew that authorization.
+For optional live AI extraction, use `.env.paypal.example` as the field reference. `PAYPAL_AI_KEY` is an existing Fireworks key; `PAYPAL_AI_CALL_LIMIT` defaults to zero. Explicitly authorized calls are counted durably before dispatch, including failed calls. A restart does not renew the budget. The November 4 owner authorization is **4 calls in this local workspace**; 2 were used: the accepted example and a recorded repeat for the video. Do not reset or delete the ledger to renew that authorization.
 
 ## Verified journey
 
@@ -24,7 +24,7 @@ For optional live AI extraction, use `.env.paypal.example` as the field referenc
 4. Approve the order. Back in Tomorrow Ready, explicitly finish the test payment. The server reads the order, verifies the exact reference/amount/currency/merchant, captures only an approved order, and requires a completed capture before showing Paid.
 5. Paste the fictional cancellation, quote it and confirm the event. The receipt remains; the UI indicates that a refund needs attention. No refund API is called.
 
-The successful November 4 Sandbox payment used order `5EF856840C016223B`, capture `7AS438527D0103231`, EUR 12.50. These are test records, not revenue. The live extraction used Fireworks `accounts/fireworks/models/muse-spark-open`, one request with fictional data. One example does not establish general model accuracy.
+The successful November 4 Sandbox payment used order `5EF856840C016223B`, capture `7AS438527D0103231`, EUR 12.50. These are test records, not revenue. The live extraction used Fireworks `accounts/fireworks/models/muse-spark-open`, two requests with fictional data. One example does not establish general model accuracy.
 
 ## Failure handling and limits
 

@@ -1,60 +1,71 @@
-# DuetNest Tomorrow Ready
+# Tomorrow Ready: School Payments
 
-[Watch the 3-minute demo](https://ilyapolitik.github.io/duetnest-tomorrow-ready/video.html) · [Try the recorded chat cycle](https://ilyapolitik.github.io/duetnest-tomorrow-ready/)
+**PayPal AI Hackathon 2026 · Illia Borovikov · 160418 OÜ**
 
-Meta Global AI Developer Hackathon 2026 · Startups / Build for Your World · Illia Borovikov, 160418 OÜ.
+Turn a school message into a payment you can verify, approve and find again. AI extracts an explicit amount, currency and deadline with source quotations. A parent reviews the draft and the fixed test recipient, approves the order in PayPal Sandbox, and keeps a verified receipt when plans change.
 
-The demonstrated event-revision workflow was developed during the hackathon. An isolated base existed on26October; see [NEW-WORK.md](NEW-WORK.md) for the contribution boundary. The hosted experience uses recorded fictional responses and needs no API key. Arbitrary-text/PDF/photo analysis is available in the separately configured local development route.
+This branch contains the functioning **PayPal variant**. The earlier Meta submission remains on [`main`](https://github.com/IlyaPolitik/duetnest-tomorrow-ready/tree/main); its hosted recorded walkthrough is a different entry and is not the PayPal demo.
 
-School plans change. Keep what you have done, see what changed, and know your next step.
+## Run the working application
 
-## Judge walkthrough: no key, account, or model credit needed
-
-Requires Node26 and npm. From this folder:
+Requires Node.js 26, npm, internet, a free PayPal Developer/Sandbox account and an existing Fireworks API key for live AI. Fireworks account/credit requirements are set by that provider; no provider credentials are included in this public repository. No production PayPal account upgrade or real payment is needed.
 
 ```sh
+git clone --branch codex/paypal-hackathon-20261104 --single-branch https://github.com/IlyaPolitik/duetnest-tomorrow-ready.git
+cd duetnest-tomorrow-ready
 npm ci --ignore-scripts
-npm run demo:build
-npm run demo:preview
+npm run paypal:dev
 ```
 
-Open http://127.0.0.1:4320/ . The entry opens the English recorded walkthrough. Use the visible Interface language selector for Ukrainian or Estonian (drafts and plans stay in this browser); during an unsaved review finish or return to the message first. Alternatively, use http://127.0.0.1:4320/demo/chat.html?session=judge-chat-20261102&lang=uk .
+Open **http://127.0.0.1:4322/payments.html**. This route includes its local server API; serving `dist-paypal` as static files alone does not provide payments or AI.
 
-The self-contained `dist-demo/` output can also be served by a static HTTP server. There is no server API or credential in this build. Installation needs internet; the recorded text cycle runs without a model connection afterward. Install scripts are unnecessary for this judge route. No `.env` file is needed. Do not open the HTML directly as a `file:` URL.
+### PayPal setup
 
-1. Choose **1 · Chat excerpt**, then **Show my next steps**. Name the event Riverside museum visit, check actions/dates, confirm and save.
-2. Mark the returned form and packed water done. Raincoat becomes the next action.
-3. Choose **A new message arrived**, then **2 · Time change**. Analyze and review08:20→08:05; water and unmentioned requirements stay. Confirm and apply.
-4. Add another message using **3 · Cancellation**. Review the exact Ukrainian cancellation quotation; confirm that the entire selected trip is cancelled. Active preparation stops.
-5. Reload and open history. **Restore previous version** returns08:05, completed water and pending raincoat. Reload again to check persistence.
+1. Sign in to [PayPal Developer](https://developer.paypal.com/dashboard/applications/sandbox) and select **Sandbox**. Use an existing/default Sandbox application.
+2. Under Sandbox Accounts, open the app's **Business** account and read its Account ID (merchant ID). The default **Personal** account is the test buyer.
+3. In the app, open **Set up Sandbox** and enter the Sandbox client ID, secret and merchant ID. The local server verifies them and writes `.env.paypal` with owner-only permissions.
+4. Never enter Live credentials. Keep the Business account as recipient and use the separate Personal sandbox login at checkout.
 
-Examples only fill the draft. Nothing is applied automatically. The banner explicitly labels recorded Meta responses; this is not live inference or a latency benchmark. Arbitrary text is rejected with a practice-mode explanation. The judge build is text-only; PDF/photo import remains in the separate live development prototype.
+### Live AI setup
 
-Plans belong to this browser and origin. Port4320 is separate from4318; changing port/browser does not migrate a plan. A fresh browser profile gives an empty walkthrough. Existing saved events can be retained and a new event created; do not clear unrelated browser data.
+Stop the local server after PayPal setup. Add your existing [Fireworks](https://fireworks.ai/) key and your chosen small test limit to `.env.paypal`, then restart `npm run paypal:dev`:
 
-## Evidence and limits
+```dotenv
+PAYPAL_AI_KEY=your_existing_fireworks_key
+PAYPAL_AI_CALL_LIMIT=4
+```
 
-`npm test` runs139 offline regression tests. `npm run demo:build` typechecks the project and builds the judge route. See EVALUATION.md for provider/agent/human evidence separately, and NEW-WORK.md for the contribution boundary. The local three-minute video uses current UI captures and synthetic English narration; it is an edited recorded-response walkthrough. Full unassisted parent acceptance is pending.
+The model is `accounts/fireworks/models/muse-spark-open`. Use a key authorized to call it. The limit is a durable **total call count** for this workspace, not a recurring allowance; failed requests also count. Existing workspaces must retain their ledger and previously authorized limit. Secrets stay on the server; requests go only to PayPal Sandbox and Fireworks. Never commit `.env.paypal` or `.payment-data`.
 
-Exact EN/PL and UK texts are also in `demo/01-first*.txt`, `02-change*.txt`, `03-cancel*.txt`. The legacy `/demo/cycle.html` route accepts those fictional texts; `/demo/chat.html` uses the three visible chat samples and a fixed disclosed sample message date and does not call a provider.
+Without an AI key, the app explicitly shows AI as unavailable and allows manual entry. Manual sample copying is a labelled fallback, not an AI result. Live AI extraction was separately verified for the submitted demonstration.
 
-## Separate live development prototype
+## Five-step walkthrough
 
-`npm run dev` prepares PDF/OCR, voice and object-detection assets, including pinned downloads requiring internet/disk. It serves the live route on4318. A private `.env.server` with `MODEL_PROVIDER=fireworks` and `FIREWORKS_API_KEY` is required for live inference; no credential is supplied. Model: `accounts/fireworks/models/muse-spark-open`. Reviewed text is sent after explicit analysis. Failures are not silently retried. Development request limits are not a durable hosted spending cap. Do not expose the development API publicly.
+1. Choose **Try a fictional school message**. Explicitly consent to sending it to Fireworks and click **Find payment details with AI**.
+2. Review EUR 12.50, the November 12 deadline, exact source quotations and the Sandbox recipient. Check the review box and save.
+3. Open PayPal Sandbox from the payment card. Sign in with the existing Personal **sandbox** account and approve the test order.
+4. Back in the app, click **I approved in PayPal · finish test payment**. Only a verified `COMPLETED` capture with matching amount, currency, merchant and reference becomes Paid.
+5. Review the fictional cancellation, quote it and confirm. Reload: the receipt remains, and the event shows **Refund needs attention**. Cancellation does not automatically return money.
 
-`npm run build` is the broader frontend build with asset preparation. It is separate from the static judge build. Earlier calculation/voice/bag experiments are secondary prototypes, not integrated into the event cycle. No integration with production DuetNest is claimed.
+An unknown network outcome blocks blind create/capture retries. **Check PayPal status** reads the existing order. If creation was dispatched but no order ID returned, inspect the Sandbox dashboard using the request ID shown by the app; do not work around the guard by renaming the event.
 
-## Distribution boundary
+## What was built for this entry
 
-The original project code in this standalone hackathon repository is licensed under MIT. Third-party dependencies retain their own licenses. This repository excludes production DuetNest. See LICENSE. See THIRD-PARTY-NOTICES.md. The source archive excludes credentials, private account receipts, raw parent data and downloaded model binaries.
+On November 4, 2026, this separate variant added payment-specific AI extraction and evidence validation, mandatory human review, fixed Sandbox payee binding, OAuth/Orders v2 create/approval/capture/readback, durable transaction state and idempotency keys, cancellation with receipt retention, a responsive English interface, and 15 targeted tests. The prior school-planning idea existed before this variant; we do not claim the entire repository was first created for PayPal.
 
-## Estonian interface
+One real Sandbox order/capture was completed for EUR 12.50 using fictional data, then independently read back from PayPal. It is test evidence, not revenue. The demonstration also shows recorded interaction with the functioning app; cuts do not represent a latency benchmark.
 
-Use `?session=judge-chat-20261102&lang=et` on the recorded cycle route. The core first-message, revision, cancellation, history and undo interface is localized, including dates, counters and known action labels. Original quotations remain unchanged. The default replay uses a supplied Ukrainian chat and existing recorded responses, as disclosed on screen. Live requests can ask for Estonian output; this transport is tested with a mocked response. Fresh Estonian model accuracy, Estonian-source OCR/date/cancellation parsing and native-speaker review are not verified. Secondary lab experiments are outside this localization scope.
+## Checks
 
+```sh
+npm run paypal:test
+npm run paypal:build
+```
 
-## Pasted chat intake
+15 targeted tests cover evidence validation, request-origin/CSRF checks, duplicate actions, provider approval, exact receipt matching, uncertain outcomes, restart recovery and cancellation retention. The interface was inspected on desktop and at 320 px. See [implementation notes](payments/README.md) for details.
 
-The live route accepts chat/email text and PDF/photo extraction. Supply a known message date to resolve today/tomorrow; use one event and one message date per excerpt. Original quotes and dates survive save, reload and history. Output requires review; no automatic messenger connection.
+## Boundaries and license
 
-Current diagnostic evidence and limits are in EVALUATION.md. Two successful first-chat calls took10.837s and16.856s after explicit low reasoning; two other diagnostic outputs were rejected. This is not universal reliability or a throughput benchmark.
+This is a single-user, local hackathon prototype with a single-process JSON ledger. It has no public payment backend, school onboarding, automatic refunds, webhook delivery, real customer validation or measured time-saving claim. The payment parser currently requires an explicit ISO date and EUR, USD or PLN. Quotes support human review; they do not prove a message's meaning or legitimacy.
+
+Original code: [MIT](LICENSE), © 2026 160418 OÜ. Dependencies retain their own licenses; see [third-party notices](THIRD-PARTY-NOTICES.md). Production DuetNest, credentials and private account data are outside this repository.
