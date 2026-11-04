@@ -44,6 +44,6 @@ npm run paypal:build
 
 15 affected tests cover evidence validation, CSRF/origin restrictions, duplicate actions, provider approval, exact capture matching, uncertain outcomes, restart recovery and cancellation retention. Desktop and 320 px UI were inspected. Browser reload retained the draft and paid/cancelled record. The submitted Meta version and production DuetNest are separate and unchanged.
 
-This variant is local. It has not been published or submitted to Devpost. A new public YouTube demonstration under 3 minutes, published source and final application review remain before submission. The official deadline checked November 4 is November 12, 2026, 12:00 PST (20:00 UTC / 21:00 Warsaw / 22:00 Kyiv).
+The application runs locally. This branch supplies the open-source PayPal variant, with a separate YouTube demonstration and Devpost entry. The earlier Meta hosted demo is not a substitute for this working PayPal route. The official deadline checked November 4 is November 12, 2026, 12:00 PST (20:00 UTC / 21:00 Warsaw / 22:00 Kyiv).
 
 Official references: [competition rules](https://paypalaihackathon.devpost.com/rules), [create order](https://developer.paypal.com/api/orders/v2/orders-create), [capture order](https://developer.paypal.com/api/orders/v2/orders-capture), [get order](https://developer.paypal.com/api/orders/v2/orders-get).

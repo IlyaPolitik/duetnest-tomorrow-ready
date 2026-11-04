@@ -37,7 +37,7 @@ PAYPAL_AI_CALL_LIMIT=4
 
 The model is `accounts/fireworks/models/muse-spark-open`. Use a key authorized to call it. The limit is a durable **total call count** for this workspace, not a recurring allowance; failed requests also count. Existing workspaces must retain their ledger and previously authorized limit. Secrets stay on the server; requests go only to PayPal Sandbox and Fireworks. Never commit `.env.paypal` or `.payment-data`.
 
-Without an AI key, the app explicitly shows AI as unavailable and allows manual entry. Manual sample copying is a labelled fallback, not an AI result. Live AI extraction was separately verified for the submitted demonstration.
+Without an AI key, the app explicitly shows AI as unavailable and allows manual entry. Manual sample copying is a labelled fallback, not an AI result. Live AI extraction was separately verified for the recorded demonstration.
 
 ## Five-step walkthrough
 
