@@ -14,7 +14,10 @@
     "bag:assets": "node scripts/prepare-bag-model.mjs",
     "voice:assets": "node scripts/prepare-voice-assets.mjs",
     "demo:build": "tsc --noEmit && vite build --config demo/vite.config.ts --mode judge",
-    "demo:preview": "vite preview --config demo/vite.config.ts --host 127.0.0.1 --port 4320 --strictPort"
+    "demo:preview": "vite preview --config demo/vite.config.ts --host 127.0.0.1 --port 4320 --strictPort",
+    "paypal:dev": "vite --config payments/vite.config.ts",
+    "paypal:build": "tsc --noEmit && vite build --config payments/vite.config.ts",
+    "paypal:test": "node --test payments/*.test.ts"
   },
   "dependencies": {
     "@huggingface/transformers": "4.3.1",
